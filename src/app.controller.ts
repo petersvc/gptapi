@@ -9,7 +9,6 @@ export class AppController {
   getResponse(@Query() query: { prompt: string }): Promise<{ res: string }> {
     const promptRequest = query.prompt;
     const res = this.appService.getResponse(promptRequest);
-    // INSERT INTO expenses (description, category, value) VALUES ("sorvete", "alimentação", 30);
     return res;
   }
 }

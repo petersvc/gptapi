@@ -49,8 +49,6 @@ let AppService = class AppService {
             inputElement = '.rsc-input[placeholder="Type your question..."]';
             elementToWait = '.rsc-suggestion-sub';
         }
-        console.log('\nUrl: ' + url);
-        console.log('Prompt: ' + this.promptRequest);
         await this.page.goto(url);
         await this.page.waitForSelector(elementToWait);
         await this.delay(300);

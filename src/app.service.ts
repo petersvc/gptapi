@@ -55,9 +55,6 @@ export class AppService {
       elementToWait = '.rsc-suggestion-sub';
     }
 
-    console.log('\nUrl: ' + url);
-    console.log('Prompt: ' + this.promptRequest);
-
     await this.page.goto(url);
     await this.page.waitForSelector(elementToWait);
     await this.delay(300);
@@ -77,7 +74,7 @@ export class AppService {
       });
     }
 
-    this.response = scrapeResult; // .replace(/\./g, '');
+    this.response = scrapeResult;
   }
 
   async getResponse(promptRequest: string): Promise<{ res: string }> {
@@ -93,7 +90,3 @@ export class AppService {
     return { res: this.response.replace(/\"/g, "'") };
   }
 }
-// appid: 1095769083393355868
-// key: 5f9c216652ec3ce50795cc9a2e76efe3baf71ba09b89fd662bebe9655b1874b7
-// token: MTA5NTc2OTA4MzM5MzM1NTg2OA.GslVrC.-oC3907knHvjs7tdmVEIeKAU6MPGZ0fbH-2LKk
-// permissions interger: 534723918912
